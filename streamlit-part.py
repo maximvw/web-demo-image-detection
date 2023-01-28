@@ -14,7 +14,10 @@ def load_image():
 
 st.title('Object Detection')
 img = load_image()
-result = st.button('Детектировать изображение')
+result = None
+
+if img:
+    result = st.button('Детектировать изображение')
 
 if result:
     result = requests.post(url='http://127.0.0.1:8000/detect-image',
